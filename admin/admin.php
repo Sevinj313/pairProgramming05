@@ -49,6 +49,9 @@
 								}
 				?>
 						</tr>
+				<?php
+					}
+				?>
 				</tbody>
 			</table>
 		</div>
@@ -57,10 +60,9 @@
 </html>
 <?php
 				}
+			} else {
+				unset($_SESSION['admin']);
+				echo "Access denied!";
 			}
-		} else {
-			unset($_SESSION['admin']);
-			echo "Access denied!";
-		}
-	mysqli_close($db_conn);
+		mysqli_close($db_conn);
 ?>

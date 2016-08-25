@@ -64,11 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 			$filename = $currentDate . ".$filetype";
 			$target_file = "../images/" . $filename;
 
-			
-
 			if($filetype == "jpg" || $filetype == "png" || $filetype == "jpeg") {
 				if(move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-					unlink("../images/".$result['path']);
+					// unlink("../images/".$result['path']);
 					$sql_edit = "UPDATE slider SET description='$description', path='$filename' WHERE id=$id";
 					mysqli_query($db_conn, $sql_edit);
 					header("Location:admin.php");

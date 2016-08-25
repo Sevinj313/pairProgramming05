@@ -31,8 +31,11 @@ $(document).ready(function(){
 	width: 960px;
 	height: 500px;
 	background-color:#EFECDD;
+	overflow: hidden;
 
-
+}
+img {
+	width: 100%;
 }
 .carousel-control{
 	background-color: transparent;
@@ -80,30 +83,40 @@ margin-top: 200px;
 }
 </style>
 <body>
+<?php 
+	include 'admin/db.php';
+	$i = 0;
+
+	$sql_all = "SELECT * FROM slider";
+	$query = mysqli_query($db_conn, $sql_all);
+	$images = array();
+
+?>
+
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
-			    
+	<?php
+		while($row = mysqli_fetch_assoc($query)) {
+			array_push($images, $row['path']);
+	?>
+			    <li data-target="#myCarousel" data-slide-to="<?=$i?>" class="<?php if($i++ == 0) echo "active"?>"></li>
+	<?php
+		}
+	?>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="images/1.jpg" alt="Chania">
+	<?php 
+			for($j = 0; $j < count($images); $j++) {
+	?>
+				<div class="item <?php if($j == 0) echo "active"?>">
+			      <img src="images/<?=$images[$j]?>" alt="">
 			    </div>
-
-			    <div class="item">
-			      <img src="images/2.jpg" alt="Chania">
-			    </div>
-
-			    <div class="item">
-			      <img src="images/3.jpg" alt="Flower">
-			    </div>
-
-			    
+	<?php 
+		}
+	?>			    
 			  <!-- Left and right controls -->
 			  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			   <div class="triangle-right">
