@@ -98,9 +98,12 @@ margin-top: 200px;
 			  <ol class="carousel-indicators">
 	<?php
 		while($row = mysqli_fetch_assoc($query)) {
-			array_push($images, $row['path']);
+			if($row['publish'] == "p") array_push($images, $row['path']);
+		}
+		for($i = 0; $i < count($images); $i++) {
+		
 	?>
-			    <li data-target="#myCarousel" data-slide-to="<?=$i?>" class="<?php if($i++ == 0) echo "active"?>"></li>
+			    <li data-target="#myCarousel" data-slide-to="<?=$i?>" class="<?php if($i == 0) echo "active"?>"></li>
 	<?php
 		}
 	?>
