@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2016 at 03:35 PM
+-- Generation Time: Aug 25, 2016 at 04:01 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -38,11 +38,13 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `description`, `path`, `publish`) VALUES
-(4, 'sdasdsa', 'image.jpg', 'p'),
-(5, 'sdasdsa', 'image.jpg', 'p'),
 (6, 'sdasdsaddsa', '1.jpg', 'p'),
 (7, 'sdasdsaddsa', '2.jpg', 'p'),
-(8, 'sdasdsaddsa', '3.jpg', 'p');
+(8, 'sdasdsaddsa', '3.jpg', 'p'),
+(11, 'sdasdsaddsa', '4.jpg', 'p'),
+(12, 'sdasdsaddsa', '5.jpg', 'p'),
+(13, 'sdasdsaddsa', '6.jpg', 'p'),
+(15, 'sdasdsaddsa', '7.jpg', 'p');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
