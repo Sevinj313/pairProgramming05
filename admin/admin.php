@@ -15,6 +15,7 @@
 	<div class="container">
 		<div class="row">
 			<a href="add.php" class="btn btn-success">Add Slide</a>
+			<a href="logout.php?value=sdefregrerefe156465sdsa" class="btn btn-danger">Log out</a>
 			<table class="table table-striped table-bordered">
 				<thead>
 					<th>ID</th>

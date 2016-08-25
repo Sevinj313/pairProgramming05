@@ -6,10 +6,9 @@
 			$id = $_GET['id'];
 			$sql_delete = "DELETE FROM slider WHERE id=$id";
 			$sql_get_path = "SELECT path FROM slider WHERE id=$id";
-			$fpath;
-			if($fpath = mysqli_query($db_conn, $sql_get_path)) {
+			if(mysqli_query($db_conn, $sql_get_path)) {
 				if(mysqli_query($db_conn, $sql_delete)) {
-					unlink("../images/$fpath");
+					// unlink("../images/$fpath");
 					header("Location:admin.php");
 				}
 			}
